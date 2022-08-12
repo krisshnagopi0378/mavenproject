@@ -1,0 +1,29 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: azure-bookstore
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: azure-bookstore
+  template:
+    metadata:
+      labels:
+        app: azure-bookstore
+    spec:
+      nodeSelector:
+        "kubernetes.io/os": linux
+      containers:
+      - name: azure-bookstore
+        image: maventest.azurecr.io/bookstore:v1
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 250m
+            memory: 256Mi
+        ports:
+        - containerPort: 80
