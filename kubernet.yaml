@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata: devops-tools
-  name: 
+metadata: 
+  name: devops-tools
 spec:
   replicas: 1
   selector:
