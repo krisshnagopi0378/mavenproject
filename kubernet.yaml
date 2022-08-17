@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   name: azure-bookstore
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: azure-bookstore
@@ -17,7 +17,7 @@ spec:
         "kubernetes.io/os": linux
       containers:
       - name: azure-bookstore
-        image: maventest.azurecr.io/bookstore:54
+        image: maventest.azurecr.io/bookstore:build-1
         resources:
           requests:
             cpu: 100m
