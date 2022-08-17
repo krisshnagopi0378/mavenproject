@@ -1,10 +1,10 @@
+---
 apiVersion: apps/v1
 kind: Deployment
-metadata: 
-  name: devops-tools
-  namespace: devops-tools
+metadata:
+  name: azure-bookstore
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: azure-bookstore
@@ -27,3 +27,15 @@ spec:
             memory: 256Mi
         ports:
         - containerPort: 80
+       
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: public-svc
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: bookstore-public
