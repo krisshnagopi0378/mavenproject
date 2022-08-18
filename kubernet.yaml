@@ -17,7 +17,7 @@ spec:
         "kubernetes.io/os": linux
       containers:
       - name: azure-bookstore
-        image: maventest.azurecr.io/bookstore:build-57
+        image: maventest.azurecr.io/bookstore:build-$BUILD_NUMBER
         resources:
           requests:
             cpu: 100m
