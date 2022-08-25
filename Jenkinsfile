@@ -1,5 +1,5 @@
  node {
- stage('Checkout the dockefile from GitHub') {            
+ stage('Checkout the sourcecode from GitHub') {            
         git branch: 'master', credentialsId: 'github', url: 'git@github.com:USBharath/mavenproject.git'        
       }   
      stage('Build') { 
